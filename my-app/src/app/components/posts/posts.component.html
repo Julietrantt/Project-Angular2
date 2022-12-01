@@ -1,7 +1,8 @@
 <p>posts works!</p>
 <div class="postList">
     <p *ngFor="let post of postList$ | async" class="posts">
-        <strong> {{post.title}} </strong> <br>       
+        <strong> {{post.title}} </strong> <br>    
+
         {{post.body}}
     </p>
 </div>
