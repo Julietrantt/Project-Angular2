@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Posts, User, PostsService } from 'src/app/services/posts.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -12,22 +11,17 @@ export class PostDetailComponent implements OnInit {
   postOne: any;
   PostArray: any;
   Comments: any;
-  ArrayComments: any = []
+  ArrayComments: any = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private http: HttpClient,
-    public post: PostsService
-  ) {}
+  constructor(private route: ActivatedRoute, public postService: PostsService) {}
 
   ngOnInit(): void {
     this.getPost();
-
   }
 
   getPost(): any {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.post.getPost().subscribe((res) => {
+    this.postService.getPost().subscribe((res) => {
       this.PostArray = res;
       let index = this.PostArray.findIndex(
         (p: { id: string }) => p.id == id.toString()
@@ -37,5 +31,4 @@ export class PostDetailComponent implements OnInit {
       }
     });
   }
-
 }

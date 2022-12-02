@@ -1,8 +1,8 @@
 <div class="postList">
   <div *ngFor="let post of PostArray" class="posts">
-    <p class="postTitle">
+  
       <strong> {{ post.title }} </strong>
-    </p>
+    
 
     <app-users [user_id]="post.userId"> </app-users>
 
