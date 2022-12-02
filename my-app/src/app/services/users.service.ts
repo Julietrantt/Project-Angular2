@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  constructor(private http:HttpClient) { }
+  // constructor(private http:HttpClient) { }
 
-  getUsersList(): any {
-    this.http.get('https://jsonplaceholder.typicode.com/users')
-  }
+  // getUsersList(): any {
+  //   this.http.get('https://jsonplaceholder.typicode.com/users')
+  // }
 }

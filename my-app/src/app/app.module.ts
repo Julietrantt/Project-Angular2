@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CommentsService,PostsService,UsersService],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

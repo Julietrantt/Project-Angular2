@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
-import { PostsService } from 'src/app/services/posts.service';
+import { Posts, PostsService, User } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,17 +9,23 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  postList:any;
-  postList$:any;
+  PostArray: Posts[] = []
+  UserArray: User[] = []
 
-  constructor(private postsService:PostsService) { }
+  constructor(private http: HttpClient, public post: PostsService) { }
 
   ngOnInit(): void {
-    this.getPosts()
+    var ar = this.getPost()
   }
 
-  getPosts():void {
-    this.postList$ = this.postsService.getPostsList().pipe(tap((posts)=>(this.postList = posts)));
+  getPost (): any {
+    this.post.getPost().subscribe(res => {
+      for (let key in res) {
+        let p: Posts
+        p = res[key]
+        this.PostArray.push(p)
+      }
+    })
   }
 
 }

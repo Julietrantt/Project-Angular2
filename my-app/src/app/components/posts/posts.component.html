@@ -1,8 +1,18 @@
-<p>posts works!</p>
-<div class="postList">
-    <p *ngFor="let post of postList$ | async" class="posts">
-        <strong> {{post.title}} </strong> <br>    
 
-        {{post.body}}
+<div *ngFor="let post of PostArray" class="posts">
+    <p>
+      <strong> {{ post.title }} </strong>
+  
+      <br />
     </p>
-</div>
+    <app-users [user_id]="post.userId"> </app-users>
+  
+    <table>
+      <td>
+        <p>{{ post.body }}</p>
+      </td>
+      <td class="comments">
+        <app-comments [post_id]="post.id"></app-comments>
+      </td>
+    </table>
+  </div>
