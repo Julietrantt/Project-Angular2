@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Posts, User, PostsService } from 'src/app/services/posts.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -11,26 +10,18 @@ import { Posts, User, PostsService } from 'src/app/services/posts.service';
 export class PostDetailComponent implements OnInit {
   postOne: any;
   PostArray: any;
+  Comments: any;
+  ArrayComments: any = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private http: HttpClient,
-    public post: PostsService
-  ) {}
+  constructor(private route: ActivatedRoute, public postService: PostsService) {}
 
   ngOnInit(): void {
     this.getPost();
   }
 
-  // getPost (): void {
-  //   const id = Number(this.route.snapshot.paramMap.get("id"));
-  //   this.post.getPost().subscribe(post => this.allPosts = post)
-  //   this.postOne = this.allPosts.find((res: any) => console.log(res))
-  // }
-
   getPost(): any {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.post.getPost().subscribe((res) => {
+    this.postService.getPost().subscribe((res) => {
       this.PostArray = res;
       let index = this.PostArray.findIndex(
         (p: { id: string }) => p.id == id.toString()
@@ -41,17 +32,3 @@ export class PostDetailComponent implements OnInit {
     });
   }
 }
-
-// getPostUser () {
-//   this.http
-//     .get('https://jsonplaceholder.typicode.com/users')
-//     .subscribe(users => {
-//       this.Users = users
-//       let index = this.Users.findIndex(
-//         (u: { id: string }) => u.id == this.user_id
-//       )
-//       if (index > -1) {
-//         this.UserOne = this.Users[index]
-//       }
-//     })
-// }

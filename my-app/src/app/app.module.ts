@@ -11,6 +11,7 @@ import { PostsService } from './services/posts.service';
 import { UsersService } from './services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { CommentSectionComponent } from './components/comment-section/comment-section.component';
 
 
 
@@ -21,6 +22,7 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
     PostsComponent,
     CommentsComponent,
     PostDetailComponent,
+    CommentSectionComponent,
   
   ],
   imports: [

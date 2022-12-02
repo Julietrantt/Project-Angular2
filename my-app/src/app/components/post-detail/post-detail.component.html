@@ -1,17 +1,13 @@
 <div class="postList">
+  <div class="post"> 
+  <a class="getBack" routerLink=""><em>Back to main page</em></a>
 
-    <a class="getBack" routerLink=""><em>Back to main page</em></a>
-    <div  class="posts">
-      <p class="postTitle">
-        <strong> {{ postOne.title }} </strong>
-      </p>
-  
-      <app-users [user_id]="postOne.userId"> </app-users>
-  
-      <p class="postBody">{{ postOne.body }}</p>
-      <div class="postFooter">
-        
-        <p class="comments"><app-comments [post_id]="postOne.id"> </app-comments></p>
-      </div>
-    </div>
+    <h2> {{ postOne.title }} </h2>
+    
+    <p class="user"><app-users [user_id]="postOne.userId"> </app-users></p>
+
+    <p class="postBody">{{ postOne.body }}</p>
+
+    <app-comment-section [post_id]="postOne.id"> </app-comment-section>
   </div>
+</div>

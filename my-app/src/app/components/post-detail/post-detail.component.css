@@ -1,0 +1,21 @@
+.postList {
+    width: 550px;
+    margin: 0 auto;
+    border: 1px solid #999;
+  }
+
+.getBack {
+    text-decoration: underline;
+    white-space: nowrap;
+ 
+
+}
+
+.post {
+   padding: 10px;
+}
+
+.user{
+  margin-left: -10px;
+  margin-top: -10px;
+}

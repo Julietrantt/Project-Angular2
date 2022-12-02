@@ -27,12 +27,11 @@ p {
 
 .postFooter {
   text-decoration: underline;
+  padding: 5px;
   white-space: nowrap;
-  padding-left: 10px;
 }
 
 .comments {
   float: right;
-  margin-top: 0px;
   text-decoration: underline;
 }
