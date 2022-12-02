@@ -10,13 +10,18 @@ import { CommentsService } from './services/comments.service';
 import { PostsService } from './services/posts.service';
 import { UsersService } from './services/users.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     PostsComponent,
-    CommentsComponent
+    CommentsComponent,
+    PostDetailComponent,
+  
   ],
   imports: [
     BrowserModule,

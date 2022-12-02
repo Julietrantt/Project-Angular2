@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
 
@@ -7,6 +8,10 @@ const routes: Routes = [
   {
     path: "",
     component: PostsComponent
+  },
+  {
+    path:"detail/:id",
+    component: PostDetailComponent
   }
 ];
 

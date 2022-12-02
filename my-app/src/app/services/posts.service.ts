@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Posts {
+  Comment: any;
   userId: number
   id: number
   title: string
@@ -37,6 +38,14 @@ export interface User {
   phone: string
   website: string
   company: Company
+}
+
+export interface Comment {
+  postId: number
+  id: number
+  name: string
+  email: string
+  body: string
 }
 
 @Injectable({

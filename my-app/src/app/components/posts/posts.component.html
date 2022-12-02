@@ -1,18 +1,15 @@
-
-<div *ngFor="let post of PostArray" class="posts">
-    <p>
+<div class="postList">
+  <div *ngFor="let post of PostArray" class="posts">
+    <p class="postTitle">
       <strong> {{ post.title }} </strong>
-  
-      <br />
     </p>
+
     <app-users [user_id]="post.userId"> </app-users>
-  
-    <table>
-      <td>
-        <p>{{ post.body }}</p>
-      </td>
-      <td class="comments">
-        <app-comments [post_id]="post.id"></app-comments>
-      </td>
-    </table>
+
+    <p class="postBody">{{ post.body }}</p>
+    <div class="postFooter">
+      <a class="showmore" routerLink="/detail/{{post.id}}"><em>Show more</em></a>
+      <p class="comments"><app-comments [post_id]="post.id"> </app-comments></p>
+    </div>
   </div>
+</div>
