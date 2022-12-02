@@ -11,6 +11,8 @@ import { Posts, User, PostsService } from 'src/app/services/posts.service';
 export class PostDetailComponent implements OnInit {
   postOne: any;
   PostArray: any;
+  Comments: any;
+  ArrayComments: any = []
 
   constructor(
     private route: ActivatedRoute,
@@ -20,13 +22,8 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPost();
-  }
 
-  // getPost (): void {
-  //   const id = Number(this.route.snapshot.paramMap.get("id"));
-  //   this.post.getPost().subscribe(post => this.allPosts = post)
-  //   this.postOne = this.allPosts.find((res: any) => console.log(res))
-  // }
+  }
 
   getPost(): any {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -40,18 +37,5 @@ export class PostDetailComponent implements OnInit {
       }
     });
   }
-}
 
-// getPostUser () {
-//   this.http
-//     .get('https://jsonplaceholder.typicode.com/users')
-//     .subscribe(users => {
-//       this.Users = users
-//       let index = this.Users.findIndex(
-//         (u: { id: string }) => u.id == this.user_id
-//       )
-//       if (index > -1) {
-//         this.UserOne = this.Users[index]
-//       }
-//     })
-// }
+}
